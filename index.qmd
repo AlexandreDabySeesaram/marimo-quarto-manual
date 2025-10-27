@@ -1,0 +1,20 @@
+---
+title: Marimo-quarto
+toc: false
+about:
+  template: marquee
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/AlexandreDabySeesaram/marimo-quarto
+format:
+  html:
+    page-layout: full
+---
+
+## Testing marimo
+
+Here we can have marimo running within quarto
+
+
+here you'll find and [example](marimo.qmd)

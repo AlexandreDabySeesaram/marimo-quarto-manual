@@ -1,0 +1,178 @@
+---
+title: Marimo-quarto
+filters:
+    - marimo-team/marimo
+    # marimo-version: 0.14.17
+---
+
+
+
+## Example of marimo in quarto to compute the salary of french civil servants
+
+
+```python {.marimo}
+
+import marimo as mo
+
+```
+
+
+
+
+
+```python {.marimo}
+
+import numpy as np
+valeur_point_default = 4.92278 
+
+
+def gross2taxable_net(gross_salary):
+    return 0.792893401*gross_salary
+
+def gross2annual_net(gross_salary):
+    return 12*0.792893401*gross_salary
+
+def annual_taxable_net(gross_salary):
+    return 12*gross2taxable_net(gross_salary)
+
+
+
+def taxes(annual_taxable_net, threshold_1 = 11497.0, threshold_2 = 29315.0):
+    # print(f"salary : {annual_taxable_net/12}")
+    thirty_part = max((0.9*annual_taxable_net - threshold_2,0))
+    thirty_tax = 0.3*thirty_part
+    print(f"30 pourcents : {thirty_tax}")
+    second_pal_tax = 0.11*(threshold_2-threshold_1)
+    print(f"11 pourcents : {second_pal_tax}")
+    return second_pal_tax+thirty_tax
+
+
+
+
+
+
+```
+
+```python {.marimo}
+
+slider_res = mo.ui.slider(0, 10, 1, label="Indémnité résidence (%)", show_value=True, include_input=True, value = 3)
+slider_res
+
+```
+
+```python {.marimo}
+
+slider_pi = mo.ui.slider(0, 50, 1, label="Augmentation point indice (%)", show_value=True, include_input=True, value = 0)
+slider_pi
+
+```
+
+```python {.marimo}
+
+
+years_mcf_default = np.array([0, 0.67, 2.833, 2.833, 3.5, 2.833, 2.833])
+years_mcf_ENS = np.array([0, 1, 0.5, 2.833, 3.5, 2.833, 2.833])
+indice_majore_mcf_ENS = np.array([648, 648, 698, 744, 774, 808, 835])
+indice_majore_mcf = np.array([589, 648, 698, 744, 774, 808, 835])
+RIPEC = np.array([465] + [530] * 6)  # Default avec theses + 1 an bonifcations + 2PoD
+# years_mcf_ENS = np.array([0, 1.5, 2.833, 3.5, 2.833, 2.833]) # ENS avec 3+1 ans pour these 2 ans pour ens et 2 ans PoD
+RIPEC_ENS = np.array([465] + [530] * 6)  # ENS avec 3+1 ans pour these 2 ans pour ens et 2 ans PoD
+
+
+```
+
+```python {.marimo}
+
+slider_start = mo.ui.slider(589, 835, 1, label="IM initial 1", show_value=True, include_input=True, value = 678)
+slider_start
+
+
+```
+
+
+
+```python {.marimo}
+
+
+slider_start_2 = mo.ui.slider(589, 835, 1, label="IM initial 2", show_value=True, include_input=True, value = 710)
+slider_start_2
+
+```
+
+
+```python {.marimo}
+
+
+start_indice_default = slider_start.value
+start_indice_CPJ = slider_start_2.value
+
+```
+
+
+
+
+```python {.marimo}
+
+
+res = 1+slider_res.value/100
+valeur_point = valeur_point_default*(1+slider_pi.value/100)
+
+
+
+Salaire_ENSTA_moy_default = start_indice_default*valeur_point*res
+Salaire_ENSTA_moy_CPJ = (start_indice_CPJ*valeur_point)*res
+
+gross_salary = Salaire_ENSTA_moy_CPJ+2000/12
+total_annual_net = gross2annual_net(gross_salary) - taxes(annual_taxable_net(gross_salary))
+
+
+gross_salary_default = Salaire_ENSTA_moy_default+2000/12
+total_annual_net_default = gross2annual_net(gross_salary_default) - taxes(annual_taxable_net(gross_salary_default))
+
+```
+
+```python {.marimo}
+
+import pandas as pd
+# --- Table data ---
+data = {
+    "Salaire": [
+        "Brut mensuel",
+        "Net mensuelt",
+        "Net mensuel après taxes",
+        "Brut annuel",
+        "Brut équivalent privé",
+        "taxes annuelles",
+        "Pourcentage à la source"
+    ],
+    f"Montant (€) - IM {start_indice_CPJ}": [
+        gross_salary,
+        gross2annual_net(gross_salary)/12,
+        total_annual_net/12,
+        12*gross_salary,
+        12*gross_salary*0.8/0.75,
+        taxes(annual_taxable_net(gross_salary)),
+        100*taxes(annual_taxable_net(gross_salary))/gross2annual_net(gross_salary)
+    ],
+
+    f"Montant (€) - IM {start_indice_default}": [
+        gross_salary_default,
+        gross2annual_net(gross_salary_default)/12,
+        total_annual_net_default/12,
+        12*gross_salary_default,
+        12*gross_salary_default*0.8/0.75,
+        taxes(annual_taxable_net(gross_salary_default)),
+        100*taxes(annual_taxable_net(gross_salary_default))/gross2annual_net(gross_salary_default)
+    ]
+}
+
+df = pd.DataFrame(data)
+df[f"Montant (€) - IM {start_indice_CPJ}"] = df[f"Montant (€) - IM {start_indice_CPJ}"].map(lambda x: f"€{x:,.2f}")
+df[f"Montant (€) - IM {start_indice_default}"] = df[f"Montant (€) - IM {start_indice_default}"].map(lambda x: f"€{x:,.2f}")
+
+# --- Display both ---
+
+mo.ui.table(df)
+
+```
+

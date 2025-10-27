@@ -1,0 +1,37 @@
+project:
+  resources:
+    - "Resources"
+    - "style_site.scss"
+    - "Hal_css.css"
+    - "Hal_css_dark.css"
+  type: website
+  output-dir: public
+
+website:
+  page-navigation: true
+  back-to-top-navigation: true
+  bread-crumbs: true
+  open-graph: true
+  title: "Marimo-quarto"
+  image: avatar.jpg
+  favicon: avatar.jpg
+  description: "Marimo quarto test"
+  # site-url: https://alexandredabyseesaram.github.io/
+  navbar:
+    # pinned: true
+    right:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    email-obfuscation: javascript
+    theme:
+      light: [flatly,style_site.scss]
+      dark: [darkly,style_site_dark.scss]
+    css: styles.css
+    toc: true
+
+
+
+
