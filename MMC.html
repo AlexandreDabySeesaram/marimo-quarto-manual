@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Marimo-quarto</title>
+<title>Continuum mechanics – Marimo-quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -72,16 +73,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Marimo-quarto">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.17.4/dist/main.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.17.4/dist/style.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&amp;family=Lora&amp;family=PT+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<meta property="og:title" content="Continuum mechanics – Marimo-quarto">
 <meta property="og:description" content="Marimo quarto test">
 <meta property="og:image" content="https://AlexandreDabySeesaram.github.io/marimo-quarto-manual/avatar.jpg">
 <meta property="og:site_name" content="Marimo-quarto">
-</head>
-
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+</head><body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -243,7 +245,42 @@ ul.task-list li input[type="checkbox"] {
     } else {
       toggleColorMode(false);
     }
-  </script>
+  </script><marimo-filename hidden=""></marimo-filename>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -263,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -280,36 +317,76 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-marquee column-page">
-  <div class="about-image-container">
-  </div>
-  <div class="about-contents">
-    <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Marimo-quarto</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header> <main class="content column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
-<section id="testing-marimo" class="level2">
-<h2 data-anchor-id="testing-marimo">Testing marimo</h2>
-<p>Here we can have marimo running within quarto</p>
-<p>here you’ll find and <a href="./marimo.html">example</a> here you’ll find an <a href="./MMC.html">MMC</a> interactive course.</p>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Continuum mechanics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="continuum-mechanics" class="level1">
+<h1>Continuum mechanics</h1>
+<p>This static webpage shows the tangible meaning of kinematics quantities usually used in continuum mechanics.</p>
+<section id="gradient-of-the-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-of-the-transformation">Gradient of the transformation</h2>
+<p>Let <span class="math inline">\(\mathcal{F}\)</span> be the transformation such that <span class="math inline">\(\forall \underline{X} \in \Omega_0\)</span> we can define its counter part <span class="math inline">\(\underline{x} = \mathcal{F}\left\{\underline{X}\right\} \in \Omega_t\)</span></p>
+<p>Most kinematic quantities that describe the transformation of an elementary volume in the bulk are defined based on <span class="math display">\[\underline{\underline{F}} = \underline{\underline{\nabla}}\mathcal{F},\]</span> the gradient of the transformation.</p>
+<p>Let’s try to grasp the physical meaning of the component of <span class="math inline">\(\underline{\underline{F}}\)</span> in a Cartesian framework.</p>
+<p>F reads,</p>
+<marimo-island data-app-id="main" data-cell-id="Hbol" data-reactive="true">
+    <marimo-cell-output>
+    <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;type&quot;:&quot;exception&quot;,&quot;msg&quot;:&quot;No module named 'wigglystuff'&quot;,&quot;exception_type&quot;:&quot;ModuleNotFoundError&quot;,&quot;raising_cell&quot;:null}]"></marimo-mime-renderer>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">import%20marimo%20as%20mo%0Afrom%20wigglystuff%20import%20Matrix%0Aimport%20numpy%20as%20np%0A%0AF%20%3D%20mo.ui.anywidget(Matrix(np.eye(3)%2C%20step%3D0.01))%0AF</marimo-cell-code>
+</marimo-island>
+<p>You can play with its components and observe the impact it has on the deformation of a unit cube. In the following figure we can observe a unit cube initially undeformed (balck) that gets deformed by the action of <span class="math inline">\(\underline{\underline{F}}\)</span> (red).</p>
+<marimo-island data-app-id="main" data-cell-id="MJUe" data-reactive="true">
+    <marimo-cell-output>
+    <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;type&quot;:&quot;exception&quot;,&quot;msg&quot;:&quot;An ancestor raised an exception (ModuleNotFoundError): &quot;,&quot;exception_type&quot;:&quot;Ancestor raised&quot;,&quot;raising_cell&quot;:&quot;Hbol&quot;}]"></marimo-mime-renderer>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">import%20plotly.graph_objects%20as%20go%0A%0A%0A%0Anodes_0%20%3D%20np.array(%5B%0A%20%20%20%20%5B0%2C%201%2C%201%2C%200%2C%200%2C%201%2C%201%2C%200%5D%2C%20%20%23%20X-coordinates%0A%20%20%20%20%5B0%2C%200%2C%201%2C%201%2C%200%2C%200%2C%201%2C%201%5D%2C%20%20%23%20Y-coordinates%0A%20%20%20%20%5B0%2C%200%2C%200%2C%200%2C%201%2C%201%2C%201%2C%201%5D%20%20%20%23%20Z-coordinates%0A%5D)%0A%0Anodes_t%20%3D%20F.matrix%40nodes_0%0A%0A%23%20Define%20edges%20by%20vertex%20index%20pairs%0Aedges%20%3D%20np.array(%5B%0A%20%20%20%20%5B0%2C%201%5D%2C%20%5B1%2C%202%5D%2C%20%5B2%2C%203%5D%2C%20%5B3%2C%200%5D%2C%20%20%23%20bottom%20face%0A%20%20%20%20%5B4%2C%205%5D%2C%20%5B5%2C%206%5D%2C%20%5B6%2C%207%5D%2C%20%5B7%2C%204%5D%2C%20%20%23%20top%20face%0A%20%20%20%20%5B0%2C%204%5D%2C%20%5B1%2C%205%5D%2C%20%5B2%2C%206%5D%2C%20%5B3%2C%207%5D%20%20%20%23%20vertical%20edges%0A%5D)%0A%0A</marimo-cell-code>
+</marimo-island>
+<marimo-island data-app-id="main" data-cell-id="vblA" data-reactive="true">
+    <marimo-cell-output>
+    <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;type&quot;:&quot;exception&quot;,&quot;msg&quot;:&quot;An ancestor raised an exception (ModuleNotFoundError): &quot;,&quot;exception_type&quot;:&quot;Ancestor raised&quot;,&quot;raising_cell&quot;:&quot;Hbol&quot;}]"></marimo-mime-renderer>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">%23%20Create%20figure%0Afig%20%3D%20go.Figure()%0A%0A%23%20Add%20cube%20edges%0Afor%20edge%20in%20edges%3A%0A%20%20%20%20x%20%3D%20nodes_0%5B0%2C%20edge%5D%0A%20%20%20%20y%20%3D%20nodes_0%5B1%2C%20edge%5D%0A%20%20%20%20z%20%3D%20nodes_0%5B2%2C%20edge%5D%0A%20%20%20%20fig.add_trace(go.Scatter3d(%0A%20%20%20%20%20%20%20%20x%3Dx%2C%20y%3Dy%2C%20z%3Dz%2C%0A%20%20%20%20%20%20%20%20mode%3D'lines'%2C%0A%20%20%20%20%20%20%20%20line%3Ddict(color%3D'black'%2C%20width%3D3)%0A%20%20%20%20))%0Afor%20edge%20in%20edges%3A%0A%20%20%20%20x%20%3D%20nodes_t%5B0%2C%20edge%5D%0A%20%20%20%20y%20%3D%20nodes_t%5B1%2C%20edge%5D%0A%20%20%20%20z%20%3D%20nodes_t%5B2%2C%20edge%5D%0A%20%20%20%20fig.add_trace(go.Scatter3d(%0A%20%20%20%20%20%20%20%20x%3Dx%2C%20y%3Dy%2C%20z%3Dz%2C%0A%20%20%20%20%20%20%20%20mode%3D'lines'%2C%0A%20%20%20%20%20%20%20%20line%3Ddict(color%3D'red'%2C%20width%3D6)%0A%20%20%20%20))%0A%0A%23%20Configure%20layout%20with%20turntable%20mode%0Afig.update_layout(%0A%20%20%20%20scene%3Ddict(%0A%20%20%20%20%20%20%20%20aspectmode%3D'cube'%2C%0A%20%20%20%20%20%20%20%20xaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20%20%20%20%20yaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20%20%20%20%20zaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20)%2C%0A%20%20%20%20%23%20scene_camera%3Ddict(%0A%20%20%20%20%23%20%20%20%20%20eye%3Ddict(x%3D1.5%2C%20y%3D1.5%2C%20z%3D1)%2C%0A%20%20%20%20%23%20%20%20%20%20projection%3Ddict(type%3D'perspective')%0A%20%20%20%20%23%20)%2C%0A%20%20%20%20dragmode%3D'turntable'%2C%20%20%23%20%E2%9C%85%20Turntable%20rotation%0A%20%20%20%20title%3D%22Initial%20and%20deformed%20unit%20cube%22%2C%20%0A%20%20%20%20showlegend%20%3D%20False%0A)%0A%0Amo.ui.plotly(fig)%0A%0A</marimo-cell-code>
+</marimo-island>
+<p>The variation of the volume is given by the jacobian <span class="math display">\[J=\text{det}\left(\underline{\underline{F}}\right).\]</span> The current volume <span class="math inline">\(V_t\)</span> is computed as <span class="math display">\[V_t = J~V_0\]</span> with <span class="math inline">\(V_0\)</span> being the volume of the initial cube.</p>
+<marimo-island data-app-id="main" data-cell-id="bkHC" data-reactive="true">
+    <marimo-cell-output>
+    <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;type&quot;:&quot;exception&quot;,&quot;msg&quot;:&quot;An ancestor raised an exception (ModuleNotFoundError): &quot;,&quot;exception_type&quot;:&quot;Ancestor raised&quot;,&quot;raising_cell&quot;:&quot;Hbol&quot;}]"></marimo-mime-renderer>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">jacobian%20%3D%20np.linalg.det(F.matrix)</marimo-cell-code>
+</marimo-island>
+<p>See the new volume</p>
+<marimo-island data-app-id="main" data-cell-id="lEQa" data-reactive="true">
+    <marimo-cell-output>
+    <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;type&quot;:&quot;exception&quot;,&quot;msg&quot;:&quot;An ancestor raised an exception (ModuleNotFoundError): &quot;,&quot;exception_type&quot;:&quot;Ancestor raised&quot;,&quot;raising_cell&quot;:&quot;Hbol&quot;}]"></marimo-mime-renderer>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">mo.ui.text(rf%22V_t%20%3D%7Bjacobian%3A.3e%7D%24%5CtimesV_0%24%22)%0A</marimo-cell-code>
+</marimo-island>
 
 
 </section>
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> 
-    <div class="about-footer"><div class="about-links">
-  <a href="https://github.com/AlexandreDabySeesaram/marimo-quarto" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
-  </div>
-</div>
- <!-- /main -->
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -325,6 +402,13 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
