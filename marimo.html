@@ -328,78 +328,84 @@ ul.task-list li input[type="checkbox"] {
     </marimo-cell-output>
     <marimo-cell-code hidden="">import%20numpy%20as%20np%0Avaleur_point_default%20%3D%204.92278%20%0A%0A%0Adef%20gross2taxable_net(gross_salary)%3A%0A%20%20%20%20return%200.792893401*gross_salary%0A%0Adef%20gross2annual_net(gross_salary)%3A%0A%20%20%20%20return%2012*0.792893401*gross_salary%0A%0Adef%20annual_taxable_net(gross_salary)%3A%0A%20%20%20%20return%2012*gross2taxable_net(gross_salary)%0A%0A%0A%0Adef%20taxes(annual_taxable_net%2C%20threshold_1%20%3D%2011497.0%2C%20threshold_2%20%3D%2029315.0)%3A%0A%20%20%20%20%23%20print(f%22salary%20%3A%20%7Bannual_taxable_net%2F12%7D%22)%0A%20%20%20%20thirty_part%20%3D%20max((0.9*annual_taxable_net%20-%20threshold_2%2C0))%0A%20%20%20%20thirty_tax%20%3D%200.3*thirty_part%0A%20%20%20%20print(f%2230%20pourcents%20%3A%20%7Bthirty_tax%7D%22)%0A%20%20%20%20second_pal_tax%20%3D%200.11*(threshold_2-threshold_1)%0A%20%20%20%20print(f%2211%20pourcents%20%3A%20%7Bsecond_pal_tax%7D%22)%0A%20%20%20%20return%20second_pal_tax%2Bthirty_tax%0A%0A</marimo-cell-code>
 </marimo-island>
-<div class="columns">
-<div class="column" style="width:50%;">
 <marimo-island data-app-id="main" data-cell-id="vblA" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="vblA-0" random-id="f6aee419-3d11-cc8c-62f2-9b93f7e98c11"><marimo-slider data-initial-value="3" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IR (%)</span></span>&quot;" data-start="0" data-stop="10" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <span></span>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">slider_res%20%3D%20mo.ui.slider(0%2C%2010%2C%201%2C%20label%3D%22IR%20(%25)%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%203)%0Aslider_res%0A</marimo-cell-code>
+    <marimo-cell-code hidden="">slider_res%20%3D%20mo.ui.slider(0%2C%2010%2C%201%2C%20label%3D%22IR%20(%25)%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%203)%0A%23%20slider_res%0A</marimo-cell-code>
 </marimo-island>
 <marimo-island data-app-id="main" data-cell-id="bkHC" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="bkHC-0" random-id="af1384ce-5148-95ac-df70-007d21f62186"><marimo-slider data-initial-value="0" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Reval. pt (%)</span></span>&quot;" data-start="0" data-stop="50" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <span></span>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">slider_pi%20%3D%20mo.ui.slider(0%2C%2050%2C%201%2C%20label%3D%22Reval.%20pt%20(%25)%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%200)%0Aslider_pi%0A</marimo-cell-code>
+    <marimo-cell-code hidden="">slider_pi%20%3D%20mo.ui.slider(0%2C%2050%2C%201%2C%20label%3D%22Reval.%20pt%20(%25)%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%200)%0A%23%20slider_pi%0A</marimo-cell-code>
 </marimo-island>
 <marimo-island data-app-id="main" data-cell-id="lEQa" data-reactive="true">
+    <marimo-cell-output>
+    <div style="display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem"><marimo-ui-element object-id="vblA-0" random-id="f74c76c9-21e9-6e58-e7e7-b6a003f76d68"><marimo-slider data-initial-value="3" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IR (%)</span></span>&quot;" data-start="0" data-stop="10" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element><marimo-ui-element object-id="bkHC-0" random-id="c5b74e4c-4e50-443f-f6f7-22abd8e263e3"><marimo-slider data-initial-value="0" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Reval. pt (%)</span></span>&quot;" data-start="0" data-stop="50" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element></div>
+    </marimo-cell-output>
+    <marimo-cell-code hidden="">mo.hstack(%5Bslider_res%2C%20slider_pi%5D)%0A%0A</marimo-cell-code>
+</marimo-island>
+<div class="columns">
+<div class="column" style="width:50%;">
+<marimo-island data-app-id="main" data-cell-id="PKri" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
     <marimo-cell-code hidden="">years_mcf_default%20%3D%20np.array(%5B0%2C%200.67%2C%202.833%2C%202.833%2C%203.5%2C%202.833%2C%202.833%5D)%0Ayears_mcf_ENS%20%3D%20np.array(%5B0%2C%201%2C%200.5%2C%202.833%2C%203.5%2C%202.833%2C%202.833%5D)%0Aindice_majore_mcf_ENS%20%3D%20np.array(%5B648%2C%20648%2C%20698%2C%20744%2C%20774%2C%20808%2C%20835%5D)%0Aindice_majore_mcf%20%3D%20np.array(%5B589%2C%20648%2C%20698%2C%20744%2C%20774%2C%20808%2C%20835%5D)%0ARIPEC%20%3D%20np.array(%5B465%5D%20%2B%20%5B530%5D%20*%206)%20%20%23%20Default%20avec%20theses%20%2B%201%20an%20bonifcations%20%2B%202PoD%0A%23%20years_mcf_ENS%20%3D%20np.array(%5B0%2C%201.5%2C%202.833%2C%203.5%2C%202.833%2C%202.833%5D)%20%23%20ENS%20avec%203%2B1%20ans%20pour%20these%202%20ans%20pour%20ens%20et%202%20ans%20PoD%0ARIPEC_ENS%20%3D%20np.array(%5B465%5D%20%2B%20%5B530%5D%20*%206)%20%20%23%20ENS%20avec%203%2B1%20ans%20pour%20these%202%20ans%20pour%20ens%20et%202%20ans%20PoD%0A%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="PKri" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="Xref" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="PKri-0" random-id="48621d05-9dbe-7e64-7864-687a35ea4e69"><marimo-slider data-initial-value="21" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Anciennet\u00e9 </span></span>&quot;" data-start="0" data-stop="45" data-step="3" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="Xref-0" random-id="d309232a-0616-3acc-e7fa-24858d6c1206"><marimo-slider data-initial-value="21" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Anciennet\u00e9 </span></span>&quot;" data-start="0" data-stop="45" data-step="3" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">slider_anc%20%3D%20mo.ui.slider(0%2C%2045%2C%203%2C%20label%3D%22Anciennet%C3%A9%20%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%2021)%0Aslider_anc%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="Xref" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="SFPL" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="Xref-0" random-id="5d525309-2183-1fbd-35be-70e205e2a2f3"><marimo-slider data-initial-value="30" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Palier (pt)</span></span>&quot;" data-start="0" data-stop="45" data-step="5" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="SFPL-0" random-id="1db9a9a8-9778-28ee-5926-0d3148534f9b"><marimo-slider data-initial-value="30" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Palier (pt)</span></span>&quot;" data-start="0" data-stop="45" data-step="5" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">slider_augmentation%20%3D%20mo.ui.slider(0%2C%2045%2C%205%2C%20label%3D%22Palier%20(pt)%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%2030)%0Aslider_augmentation%0A%0A</marimo-cell-code>
 </marimo-island>
 <p>Cas 1</p>
-<marimo-island data-app-id="main" data-cell-id="SFPL" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="BYtC" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="SFPL-0" random-id="d83e4601-9e7e-26b1-3d81-bb5d7f10796d"><marimo-slider data-initial-value="678" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IM initial</span></span>&quot;" data-start="589" data-stop="835" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="BYtC-0" random-id="d387b2f5-0862-5b5e-a176-fcb6dc0b2016"><marimo-slider data-initial-value="678" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IM initial</span></span>&quot;" data-start="589" data-stop="835" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">slider_start%20%3D%20mo.ui.slider(589%2C%20835%2C%201%2C%20label%3Dr%22IM%20initial%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%20678)%0Aslider_start%0A%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="BYtC" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="RGSE" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="BYtC-0" random-id="c17363b5-5546-d07f-a6fa-f11a832ecebd"><marimo-slider data-initial-value="2000" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Prime C1</span></span>&quot;" data-start="0" data-stop="7000" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="RGSE-0" random-id="33bdb242-1dd3-b40f-6190-d64181643e4d"><marimo-slider data-initial-value="2000" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Prime C1</span></span>&quot;" data-start="0" data-stop="7000" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">prime_slider%20%3D%20mo.ui.slider(0%2C%207000%2C%201%2C%20label%3Dr%22Prime%20C1%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%202000)%0Aprime_slider%0A</marimo-cell-code>
 </marimo-island>
 <p>Cas 2</p>
-<marimo-island data-app-id="main" data-cell-id="RGSE" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="Kclp" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="RGSE-0" random-id="9f6a0ce1-3be4-471a-c6cb-c7634a06c5d8"><marimo-slider data-initial-value="710" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IM initial</span></span>&quot;" data-start="589" data-stop="835" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="Kclp-0" random-id="eb7174dc-49e1-6c8f-d897-056e006999d7"><marimo-slider data-initial-value="710" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>IM initial</span></span>&quot;" data-start="589" data-stop="835" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">slider_start_2%20%3D%20mo.ui.slider(589%2C%20835%2C%201%2C%20label%3Dr%22IM%20initial%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%20710)%0Aslider_start_2%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="Kclp" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="emfo" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="Kclp-0" random-id="4732af5f-e1d1-866d-f572-779f6d92b2d7"><marimo-slider data-initial-value="2000" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Prime C1</span></span>&quot;" data-start="0" data-stop="7000" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
+    <marimo-ui-element object-id="emfo-0" random-id="4351654f-ead3-ac36-bb56-c35b94757b57"><marimo-slider data-initial-value="2000" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Prime C1</span></span>&quot;" data-start="0" data-stop="7000" data-step="1" data-steps="[]" data-debounce="false" data-disabled="false" data-orientation="&quot;horizontal&quot;" data-show-value="true" data-include-input="true" data-full-width="false"></marimo-slider></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">prime_slider_2%20%3D%20mo.ui.slider(0%2C%207000%2C%201%2C%20label%3Dr%22Prime%20C1%22%2C%20show_value%3DTrue%2C%20include_input%3DTrue%2C%20value%20%3D%202000)%0Aprime_slider_2%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="emfo" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="Hstk" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
     <marimo-cell-code hidden="">number_years%20%3D%20int(np.floor(slider_anc.value%2F3))%2B1%0Ajump_indice%20%3D%20slider_augmentation.value%0Astart_indice_default%20%3D%20slider_start.value%0Astart_indice_CPJ%20%3D%20slider_start_2.value%0A</marimo-cell-code>
 </marimo-island>
-<marimo-island data-app-id="main" data-cell-id="Hstk" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="nWHF" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
     <marimo-cell-code hidden="">res%20%3D%201%2Bslider_res.value%2F100%0Avaleur_point%20%3D%20valeur_point_default*(1%2Bslider_pi.value%2F100)%0A%0A%0A%0Aindice_majore_ENSTA_default%20%3D%20np.array(%5Bstart_indice_default%20%2B%20i%20*%20jump_indice%20for%20i%20in%20range(number_years)%5D)%0Aindice_majore_ENSTA_CPJ%20%3D%20np.array(%5Bstart_indice_CPJ%20%2B%20i%20*%20jump_indice%20for%20i%20in%20range(number_years)%5D)%0Ayears_ENSTA%20%3D%20np.array(%5B0%5D%20%2B%20%5B3%5D%20*%20(number_years%20-%201))%0APrime%20%3D%20prime_slider.value%20%2F%2012%0APrime_2%20%3D%20prime_slider_2.value%20%2F%2012%0APrime_mieux%20%3D%203000%20%2F%2012%0ASalaire_ENSTA_default%20%3D%20indice_majore_ENSTA_default%20*%20valeur_point%20*%20res%0ASalaire_ENSTA_CPJ%20%3D%20indice_majore_ENSTA_CPJ%20*%20valeur_point%20*%20res%0ASalaire_mcf_ENS%20%3D%20indice_majore_mcf_ENS%20*%20valeur_point%0A%23%20indice_majore_ENSTA_default%20%3D%20np.array(number_years*%5Bstart_indice_default%5D)%0A%23%20indice_majore_ENSTA_CPJ%20%3D%20np.array(number_years*%5Bstart_indice_CPJ%5D)%0ASalaire_mcf%20%3D%20indice_majore_mcf%20*%20valeur_point%0Aind%C3%A9mnite_residence_mcf_ENS%20%3D%200.03%20*%20Salaire_mcf_ENS%0Aind%C3%A9mnite_residence_mcf%20%3D%200.03%20*%20Salaire_mcf%0ASalaire_ENSTA_default_prime%20%3D%20Salaire_ENSTA_default%20%2B%20Prime%0ASalaire_ENSTA_CPJ_prime%20%3D%20Salaire_ENSTA_CPJ%20%2B%20Prime_2%0A%0A%0A%0A%0ASalaire_ENSTA_moy_default%20%3D%20start_indice_default*valeur_point*res%0ASalaire_ENSTA_moy_CPJ%20%3D%20(start_indice_CPJ*valeur_point)*res%0A%0Agross_salary%20%3D%20Salaire_ENSTA_moy_CPJ%2BPrime_2%0Atotal_annual_net%20%3D%20gross2annual_net(gross_salary)%20-%20taxes(annual_taxable_net(gross_salary))%0A%0A%0Agross_salary_default%20%3D%20Salaire_ENSTA_moy_default%2BPrime%0Atotal_annual_net_default%20%3D%20gross2annual_net(gross_salary_default)%20-%20taxes(annual_taxable_net(gross_salary_default))%0A</marimo-cell-code>
 </marimo-island>
 </div><div class="column" style="width:50%;">
-<marimo-island data-app-id="main" data-cell-id="nWHF" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="iLit" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
@@ -410,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="comparaison-avec-la-grille-des-maîtres-de-conférences" class="level2">
 <h2 class="anchored" data-anchor-id="comparaison-avec-la-grille-des-maîtres-de-conférences">Comparaison avec la grille des maîtres de conférences</h2>
-<marimo-island data-app-id="main" data-cell-id="iLit" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="ZHCJ" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
@@ -426,14 +432,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<marimo-island data-app-id="main" data-cell-id="ZHCJ" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="ROlb" data-reactive="true">
     <marimo-cell-output>
-    <marimo-ui-element object-id="ZHCJ-0" random-id="8e73e7c9-0335-f733-8794-33538836e926"><marimo-switch data-initial-value="true" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Interpolation de la RIPEC C1 pour 2026</span></span>&quot;" data-disabled="false"></marimo-switch></marimo-ui-element>
+    <marimo-ui-element object-id="ROlb-0" random-id="668b83b2-5b90-83df-bc0b-3c726134e09f"><marimo-switch data-initial-value="true" data-label="&quot;<span class=\&quot;markdown prose dark:prose-invert\&quot;><span class=\&quot;paragraph\&quot;>Interpolation de la RIPEC C1 pour 2026</span></span>&quot;" data-disabled="false"></marimo-switch></marimo-ui-element>
     </marimo-cell-output>
     <marimo-cell-code hidden="">Average_IM_3_year_MCF%20%3D%20(8*589%2B28*648)%2F36%0AAverage_IM_3_year_MCF_ENS%20%3D%20(1.5*648%2B1.5*698)%2F3%0A%0Aswitch%20%3D%20mo.ui.switch(label%3D%22Interpolation%20de%20la%20RIPEC%20C1%20pour%202026%22%2C%20value%20%3D%20True)%0Aswitch</marimo-cell-code>
 </marimo-island>
 </div><div class="column" style="width:50%;">
-<marimo-island data-app-id="main" data-cell-id="ROlb" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="qnkX" data-reactive="true">
     <marimo-cell-output>
     <span class="markdown prose dark:prose-invert"><span class="paragraph">RIPEC 2026 retenue : 5600 euros</span></span>
     </marimo-cell-output>
@@ -441,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
 </marimo-island>
 </div>
 </div>
-<marimo-island data-app-id="main" data-cell-id="qnkX" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="TqIu" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
@@ -450,14 +456,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Salaires moyens sur les trois premières années</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<marimo-island data-app-id="main" data-cell-id="TqIu" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="Vxnm" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
     <marimo-cell-code hidden="">mo.md(rf%22Salaire%20moyen%20mensuel%20MCF%20(ENS)%20%3A%20%7BAverage_salary_MCF_ENS%3A.2f%7D%20euros%22)%0A</marimo-cell-code>
 </marimo-island>
 </div><div class="column" style="width:50%;">
-<marimo-island data-app-id="main" data-cell-id="Vxnm" data-reactive="true">
+<marimo-island data-app-id="main" data-cell-id="DnEU" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;MJUe&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
