@@ -346,13 +346,18 @@ window.Quarto = {
 <p>Let <span class="math inline">\(\mathcal{F}\)</span> be the transformation such that <span class="math inline">\(\forall \underline{X} \in \Omega_0\)</span> we can define its counter part <span class="math inline">\(\underline{x} = \mathcal{F}\left\{\underline{X}\right\} \in \Omega_t\)</span></p>
 <p>Most kinematic quantities that describe the transformation of an elementary volume in the bulk are defined based on <span class="math display">\[\underline{\underline{F}} = \underline{\underline{\nabla}}\mathcal{F},\]</span> the gradient of the transformation.</p>
 <p>Let’s try to grasp the physical meaning of the component of <span class="math inline">\(\underline{\underline{F}}\)</span> in a Cartesian framework.</p>
-<p>F reads,</p>
+<div class="columns">
+<div class="column" style="width:30%;">
 <marimo-island data-app-id="main" data-cell-id="Hbol" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;No module named 'wigglystuff'&quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: null, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">import%20marimo%20as%20mo%0Afrom%20wigglystuff%20import%20Matrix%0Aimport%20numpy%20as%20np%0A%0AF%20%3D%20mo.ui.anywidget(Matrix(np.eye(3)%2C%20step%3D0.01))%0Amo.hstack(%5Bmo.md(r%22%5Cunderline%7B%5Cunderline%7BF%7D%7D%3D%22)%2C%20F%5D)</marimo-cell-code>
+    <marimo-cell-code hidden="">import%20marimo%20as%20mo%0Afrom%20wigglystuff%20import%20Matrix%0Aimport%20numpy%20as%20np%0A%0AF%20%3D%20mo.ui.anywidget(Matrix(np.eye(3)%2C%20step%3D0.01))%0Amo.hstack(%5Bmo.md(r%22%24%5Cunderline%7B%5Cunderline%7BF%7D%7D%3D%24%22)%2C%20F%5D)%0A</marimo-cell-code>
 </marimo-island>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
 <p>You can play with its components (<code>hover</code> and then <code>click + drag</code> directly one the matrix) and observe the impact it has on the deformation of a unit cube. In the following figure we can observe a unit cube initially undeformed (balck) that gets deformed by the action of <span class="math inline">\(\underline{\underline{F}}\)</span> (red).</p>
 <marimo-island data-app-id="main" data-cell-id="MJUe" data-reactive="true">
     <marimo-cell-output>
@@ -374,7 +379,7 @@ window.Quarto = {
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;Hbol&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">F_mat%20%3D%20np.array(F.matrix)%0A%0AC%20%3D%20mo.ui.anywidget(Matrix(F_mat.T%40F_mat%2C%20step%3D0.0))%0Amo.hstack(%5Bmo.md(r%22%5Cunderline%7B%5Cunderline%7BC%7D%7D%3D%22)%2C%20C%5D)%0A</marimo-cell-code>
+    <marimo-cell-code hidden="">F_mat%20%3D%20np.array(F.matrix)%0A%0AC%20%3D%20mo.ui.anywidget(Matrix(F_mat.T%40F_mat%2C%20step%3D0.0))%0Amo.hstack(%5Bmo.md(r%22%24%5Cunderline%7B%5Cunderline%7BC%7D%7D%3D%24%22)%2C%20C%5D)%0A</marimo-cell-code>
 </marimo-island>
 <p>that is not impacted by rigid body motions (translations or rotations).</p>
 </div>
