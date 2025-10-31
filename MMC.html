@@ -351,7 +351,7 @@ window.Quarto = {
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;No module named 'wigglystuff'&quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: null, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">import%20marimo%20as%20mo%0Afrom%20wigglystuff%20import%20Matrix%0Aimport%20numpy%20as%20np%0A%0AF%20%3D%20mo.ui.anywidget(Matrix(np.eye(3)%2C%20step%3D0.01))%0AF</marimo-cell-code>
+    <marimo-cell-code hidden="">import%20marimo%20as%20mo%0Afrom%20wigglystuff%20import%20Matrix%0Aimport%20numpy%20as%20np%0A%0AF%20%3D%20mo.ui.anywidget(Matrix(np.eye(3)%2C%20step%3D0.01))%0Amo.hstack(%5Bmo.md(r%22%5Cunderline%7B%5Cunderline%7BF%7D%7D%3D%22)%2C%20F%5D)</marimo-cell-code>
 </marimo-island>
 <p>You can play with its components (<code>hover</code> and then <code>click + drag</code> directly one the matrix) and observe the impact it has on the deformation of a unit cube. In the following figure we can observe a unit cube initially undeformed (balck) that gets deformed by the action of <span class="math inline">\(\underline{\underline{F}}\)</span> (red).</p>
 <marimo-island data-app-id="main" data-cell-id="MJUe" data-reactive="true">
@@ -369,13 +369,14 @@ window.Quarto = {
     <marimo-cell-code hidden="">%23%20Create%20figure%0Afig%20%3D%20go.Figure()%0A%0A%23%20Add%20cube%20edges%0Afor%20edge%20in%20edges%3A%0A%20%20%20%20x%20%3D%20nodes_0%5B0%2C%20edge%5D%0A%20%20%20%20y%20%3D%20nodes_0%5B1%2C%20edge%5D%0A%20%20%20%20z%20%3D%20nodes_0%5B2%2C%20edge%5D%0A%20%20%20%20fig.add_trace(go.Scatter3d(%0A%20%20%20%20%20%20%20%20x%3Dx%2C%20y%3Dy%2C%20z%3Dz%2C%0A%20%20%20%20%20%20%20%20mode%3D'lines'%2C%0A%20%20%20%20%20%20%20%20line%3Ddict(color%3D'black'%2C%20width%3D3)%0A%20%20%20%20))%0Afor%20edge%20in%20edges%3A%0A%20%20%20%20x%20%3D%20nodes_t%5B0%2C%20edge%5D%0A%20%20%20%20y%20%3D%20nodes_t%5B1%2C%20edge%5D%0A%20%20%20%20z%20%3D%20nodes_t%5B2%2C%20edge%5D%0A%20%20%20%20fig.add_trace(go.Scatter3d(%0A%20%20%20%20%20%20%20%20x%3Dx%2C%20y%3Dy%2C%20z%3Dz%2C%0A%20%20%20%20%20%20%20%20mode%3D'lines'%2C%0A%20%20%20%20%20%20%20%20line%3Ddict(color%3D'red'%2C%20width%3D6)%0A%20%20%20%20))%0A%0A%23%20Configure%20layout%20with%20turntable%20mode%0Afig.update_layout(%0A%20%20%20%20scene%3Ddict(%0A%20%20%20%20%20%20%20%20aspectmode%3D'cube'%2C%0A%20%20%20%20%20%20%20%20xaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20%20%20%20%20yaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20%20%20%20%20zaxis%3Ddict(range%3D%5B-1%2C%202%5D)%2C%20%20%23%20x-axis%20fixed%20from%200%20to%206%0A%20%20%20%20)%2C%0A%20%20%20%20%23%20scene_camera%3Ddict(%0A%20%20%20%20%23%20%20%20%20%20eye%3Ddict(x%3D1.5%2C%20y%3D1.5%2C%20z%3D1)%2C%0A%20%20%20%20%23%20%20%20%20%20projection%3Ddict(type%3D'perspective')%0A%20%20%20%20%23%20)%2C%0A%20%20%20%20dragmode%3D'turntable'%2C%20%20%23%20%E2%9C%85%20Turntable%20rotation%0A%20%20%20%20title%3D%22Initial%20and%20deformed%20unit%20cube%22%2C%20%0A%20%20%20%20showlegend%20%3D%20False%0A)%0A%0Amo.ui.plotly(fig)%0A</marimo-cell-code>
 </marimo-island>
 </div><div class="column" style="width:30%;">
-<p>The associated right Cauchy–Green deformation tensor <span class="math inline">\(\underline{\underline{C}}\)</span> reads,</p>
+<p>From this second order gradient, we can also compute the associated right Cauchy–Green deformation tensor</p>
 <marimo-island data-app-id="main" data-cell-id="bkHC" data-reactive="true">
     <marimo-cell-output>
     <marimo-mime-renderer data-mime="&quot;application/vnd.marimo+error&quot;" data-data="[{&quot;msg&quot;: &quot;An ancestor raised an exception (ModuleNotFoundError): &quot;, &quot;exception_type&quot;: &quot;ModuleNotFoundError&quot;, &quot;raising_cell&quot;: &quot;Hbol&quot;, &quot;type&quot;: &quot;exception&quot;}]"></marimo-mime-renderer>
     </marimo-cell-output>
-    <marimo-cell-code hidden="">F_mat%20%3D%20np.array(F.matrix)%0A%0AC%20%3D%20mo.ui.anywidget(Matrix(F_mat.T%40F_mat%2C%20step%3D0.0))%0AC</marimo-cell-code>
+    <marimo-cell-code hidden="">F_mat%20%3D%20np.array(F.matrix)%0A%0AC%20%3D%20mo.ui.anywidget(Matrix(F_mat.T%40F_mat%2C%20step%3D0.0))%0Amo.hstack(%5Bmo.md(r%22%5Cunderline%7B%5Cunderline%7BC%7D%7D%3D%22)%2C%20C%5D)%0A</marimo-cell-code>
 </marimo-island>
+<p>that is not impacted by rigid body motions (translations or rotations).</p>
 </div>
 </div>
 <p>The variation of the volume is given by the jacobian <span class="math display">\[J=\text{det}\left(\underline{\underline{F}}\right).\]</span> The current volume <span class="math inline">\(V_t\)</span> is computed as <span class="math display">\[V_t = J~V_0\]</span> with <span class="math inline">\(V_0\)</span> being the volume of the initial cube.</p>
